@@ -19,8 +19,8 @@ jobs:
       - name: Build and Push Docker Image
         run: |
           echo ${{ secrets.DOCKER_USERNAME }} 
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/react-app:latest .
-          docker push ${{ secrets.DOCKER_USERNAME }}/react-app:latest
+          docker build -t eldrige/react-app:latest .
+          docker push eldrige/react-app:latest
 
       - name: Deploy to EC2
         uses: appleboy/ssh-action@v0.1.9
