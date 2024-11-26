@@ -20,4 +20,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/clockbox:latest
+          tags: peldrige8@gmail.com/clockbox:latest
