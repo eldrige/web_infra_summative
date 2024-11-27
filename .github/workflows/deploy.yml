@@ -33,3 +33,15 @@ jobs:
             sudo docker stop clockbox || true
             sudo docker rm clockbox || true
             sudo docker run -d --name clockbox -p 80:80 peldrige/clockbox:latest
+
+      - name: Deploy to web-02
+        uses: appleboy/ssh-action@v0.1.9
+        with:
+          host: ${{ secrets.WEB_02_IP_ADDRESS }}
+          username: ${{ secrets.WEB_02_USER }}
+          key: ${{ secrets.WEB_02_PRIVATE_KEY }}
+          script: |
+            sudo docker pull peldrige/clockbox:latest
+            sudo docker stop clockbox || true
+            sudo docker rm clockbox || true
+            sudo docker run -d --name clockbox -p 80:80 peldrige/clockbox:latest
