@@ -22,7 +22,7 @@ jobs:
           push: true
           tags: peldrige/clockbox:latest
 
-      - name: Deploy to Linux
+      - name: Deploy to web-01
         uses: appleboy/ssh-action@v0.1.9
         with:
           host: ${{ secrets.AWS_EC2_IP_ADDRESS }}

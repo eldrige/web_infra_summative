@@ -1,12 +1,12 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-import { API_KEY, TMDB_API_BASE_URL } from '@/utils/config';
-
+// import { TMDB_API_BASE_URL } from '@/utils/config';
+const API_KEY = '5eefb2959e912005df3fa575d1d3824c';
 console.log(API_KEY, 'From app');
 
 export const tmdbApi = createApi({
   reducerPath: 'tmdbApi',
-  baseQuery: fetchBaseQuery({ baseUrl: TMDB_API_BASE_URL }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://api.themoviedb.org/3' }),
 
   endpoints: (builder) => ({
     getShows: builder.query({
