@@ -1,14 +1,14 @@
-import { useEffect, useState } from "react";
-import { m } from "framer-motion";
-import { useParams } from "react-router-dom";
+import { useEffect, useState } from 'react';
+import { m } from 'framer-motion';
+import { useParams } from 'react-router-dom';
 
-import { Poster, Loader, Error, Section } from "@/common";
-import { Casts, Videos, Genre } from "./components";
+import { Poster, Loader, Error, Section } from '@/common';
+import { Casts, Videos, Genre } from './components';
 
-import { useGetShowQuery } from "@/services/TMDB";
-import { useMotion } from "@/hooks/useMotion";
-import { mainHeading, maxWidth, paragraph } from "@/styles";
-import { cn } from "@/utils/helper";
+import { useGetShowQuery } from '@/services/TMDB';
+import { useMotion } from '@/hooks/useMotion';
+import { mainHeading, maxWidth, paragraph } from '@/styles';
+import { cn } from '@/utils/helper';
 
 const Detail = () => {
   const { category, id } = useParams();
@@ -29,10 +29,10 @@ const Detail = () => {
     document.title =
       (movie?.title || movie?.name) && !isLoading
         ? movie.title || movie.name
-        : "tMovies";
+        : 'Eldrige-Movies';
 
     return () => {
-      document.title = "tMovies";
+      document.title = 'Eldrige-Movies';
     };
   }, [movie?.title, isLoading, movie?.name]);
 
@@ -58,8 +58,8 @@ const Detail = () => {
 
   const backgroundStyle = {
     backgroundImage: `linear-gradient(to top, rgba(0,0,0), rgba(0,0,0,0.98),rgba(0,0,0,0.8) ,rgba(0,0,0,0.4)),url('https://image.tmdb.org/t/p/original/${posterPath}'`,
-    backgroundPosition: "top",
-    backgroundSize: "cover",
+    backgroundPosition: 'top',
+    backgroundSize: 'cover',
   };
 
   return (
@@ -77,7 +77,7 @@ const Detail = () => {
           >
             <m.h2
               variants={fadeDown}
-              className={cn(mainHeading, " md:max-w-[420px]")}
+              className={cn(mainHeading, ' md:max-w-[420px]')}
             >
               {title || name}
             </m.h2>
@@ -101,11 +101,11 @@ const Detail = () => {
                 type="button"
                 className={cn(
                   `font-bold ml-1 hover:underline transition-all duration-300`,
-                  overview.length > 280 ? "inline-block" : "hidden"
+                  overview.length > 280 ? 'inline-block' : 'hidden'
                 )}
                 onClick={toggleShow}
               >
-                {!show ? "show more" : "show less"}
+                {!show ? 'show more' : 'show less'}
               </button>
             </m.p>
 
@@ -117,7 +117,7 @@ const Detail = () => {
       <Videos videos={videos.results} />
 
       <Section
-        title={`Similar ${category === "movie" ? "movies" : "series"}`}
+        title={`Similar ${category === 'movie' ? 'movies' : 'series'}`}
         category={String(category)}
         className={`${maxWidth}`}
         id={Number(id)}
