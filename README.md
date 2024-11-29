@@ -18,6 +18,18 @@ ELdrigeMovies is a sleek and user-friendly platform that allows users to explore
 
 ![Trailer View](src/assets/images/search.png)
 
+---
+
+## Live Website 🌐
+
+Check out the live version of the app here: [Eldrige Movies](https://www.eldrige.tech/)
+
+---
+
+## DemoVideo 🎥
+
+Check out the demo video of the app here: [Eldrige movies demo)](https://jam.dev/c/0b07f683-aab9-45a8-8374-68335153b9cd)
+
 ## Features ✨
 
 - **Search** for movies and TV shows effortlessly.
@@ -63,7 +75,7 @@ Install dependencies:
 
 bash
 Copy code
-npm install
+npm install or yarn
 Create a .env file and add your TMDb API key:
 
 makefile
